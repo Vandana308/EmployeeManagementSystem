@@ -19,8 +19,10 @@ public class ManagerDao {
 	public ManagerDao() throws SQLException  {
 		con=DriverManager.getConnection("jdbc:mysql://localhost/miniprojectems","root","India@12345");
 	}
-	public List<Leave> getLeaves() throws Exception {	
-		ps=con.prepareStatement("select * from leave_history");
+	public List<Leave> getLeaves(int eID) throws Exception {	
+		ps=con.prepareStatement("select * from leave_history where EMP_Id=? and status=?");
+		ps.setInt(1,eID);
+		ps.setString(2, "Applied");
 		rs=ps.executeQuery();
 		List<Leave> leaveList=new ArrayList<>();
 		while(rs.next()) {
@@ -37,6 +39,8 @@ public class ManagerDao {
 		return leaveList;
 			
 	}
+	
+	
 	public FunctionResponse updateLeaveRequest(int eId, int lId, String status) throws SQLException {
 		FunctionResponse fresResponse = new FunctionResponse();
 		ps=con.prepareStatement("UPDATE leave_history SET status = ? WHERE Leave_Id = ? and Emp_id = ?");

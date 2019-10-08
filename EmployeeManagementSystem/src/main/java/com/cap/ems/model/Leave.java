@@ -6,8 +6,8 @@ private String date_from, date_to, status;
 public Leave(int leave_Id, int emp_ID, int leave_balance, int noofdays_applied, String date_from, String date_to,
 		String status) {
 	super();
-	Leave_Id = leave_Id;
-	Emp_ID = emp_ID;
+	this.Leave_Id = leave_Id;
+	this.Emp_ID = emp_ID;
 	this.leave_balance = leave_balance;
 	this.noofdays_applied = noofdays_applied;
 	this.date_from = date_from;

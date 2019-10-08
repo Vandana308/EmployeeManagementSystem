@@ -94,7 +94,7 @@ body{
                 <form action="/login" class="login-form">
                     <input type="text" placeholder="UserName" name="UserName"/>
                     <input type="password" placeholder="UserPassword" name="UserPassword"/>
-                    <button>login</button>
+                    <button>Login</button>
                    
                 </form>
             </div>

@@ -1,4 +1,4 @@
-package com.cap.ems.service;
+package com.cap.ems.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,20 +16,20 @@ import com.cap.ems.dao.logindao;
  * Servlet implementation class AuthenticationService
  */
 @WebServlet("/login")
-public class AuthenticationService extends HttpServlet {
+public class Authentication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String empname = request.getParameter("empname");
-		String pass = request.getParameter("pass");
+		String empname = request.getParameter("UserName");
+		String pass = request.getParameter("UserPassword");
 		   logindao dao = new logindao();
 		   
 		
 			try {
-		////////code to be added
-				if(true) ////////code to be added
-			////////code to be added
+		///////////code to be added
+				if(true)//////code to be added
+			///////////code to be added
 				{
 				HttpSession session = request.getSession();
 				session.setAttribute("label", empname);
@@ -37,7 +37,7 @@ public class AuthenticationService extends HttpServlet {
 				}
 				else
 				{
-					response.sendRedirect("login.jsp");
+					response.sendRedirect("loginScreen.jsp");
 					PrintWriter out = response.getWriter();
 					out.println("wrong username or password");
 				}
