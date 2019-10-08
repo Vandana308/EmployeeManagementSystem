@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cap.ems.model.Employee;
+import com.cap.ems.model.Leave;
+import com.cap.ems.utility.FunctionResponse;
 
 public class EmployeeDao {
 	Connection  con;
@@ -103,6 +105,25 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		return false;
 	}
 	
+	public boolean saveLeaves(Leave lv) throws SQLException {
+		FunctionResponse fresResponse = new FunctionResponse();
+		ps = con.prepareStatement("INSERT INTO leave_history values(?,?,?,?,?,?,?)");
+		
+		ps.setInt(1, lv.getLeave_Id());
+		ps.setInt(2, lv.getEmp_ID());
+		ps.setInt(3, lv.getLeave_balance());
+		ps.setInt(4, lv.getNoofdays_applied());
+		ps.setString(5, lv.getDate_from());
+		ps.setString(6, lv.getDate_to());
+		ps.setString(7, lv.getStatus());
+		int n=ps.executeUpdate();
+		if(n>0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	
 }
 
