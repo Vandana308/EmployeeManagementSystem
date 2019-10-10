@@ -10,31 +10,40 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.cap.ems.dao.logindao;
 
-/**
- * Servlet implementation class AuthenticationService
- */
+import com.cap.ems.service.LoginService;
+
+
+
 @WebServlet("/login")
 public class Authentication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String empname = request.getParameter("UserName");
-		String pass = request.getParameter("UserPassword");
-		   logindao dao = new logindao();
+		String UserName = request.getParameter("UserName");
+		String UserPassword = request.getParameter("UserPassword");
+		   LoginService service= new LoginService();
 		   
 		
 			try {
-		///////////code to be added
-				if(true)//////code to be added
-			///////////code to be added
+		
+				if(service.check(UserName,UserPassword)) 
+			
 				{
-				HttpSession session = request.getSession();
-				session.setAttribute("label", empname);
-				response.sendRedirect("welcome.jsp");
+					HttpSession session = request.getSession();
+					session.setAttribute("label", UserName);
+				
+					if(UserName!="admin") {
+						response.sendRedirect("adminOptionScreen.jsp");
+			    	}else if(UserName != "Manager") {
+			    		response.sendRedirect("manager.jsp");
+			    	}else {
+			    		response.sendRedirect("EMPLOYEE_MAIN_OPTION_SCREEN.jsp");
+			    	}
 				}
+			
 				else
 				{
 					response.sendRedirect("loginScreen.jsp");
@@ -42,7 +51,8 @@ public class Authentication extends HttpServlet {
 					out.println("wrong username or password");
 				}
 			} catch (Exception e)
-			{
+			{	
+				
 				e.printStackTrace();
 			}
 		} 

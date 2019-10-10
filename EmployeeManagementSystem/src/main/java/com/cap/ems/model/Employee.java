@@ -1,9 +1,9 @@
 package com.cap.ems.model;
 
 public class Employee {
-private int Emp_ID, Emp_Basic, Emp_Contact_Num, Mgr_Id, Emp_Dept_ID;
-private String Emp_First_Name, Emp_Last_Name, Emp_Grade, Emp_Designation,  Emp_Gender,  Emp_Marital_Status,  Emp_Home_Address, Emp_Date_of_Birth, Emp_Date_of_Joining;
-public Employee(int emp_ID, int emp_Basic, int emp_Contact_Num, int mgr_Id, int emp_Dept_ID, String emp_First_Name,
+private int Emp_ID, Emp_Basic,  Mgr_Id, Emp_Dept_ID;
+private String Emp_First_Name, Emp_Last_Name, Emp_Grade, Emp_Designation,  Emp_Gender,  Emp_Marital_Status,  Emp_Home_Address, Emp_Date_of_Birth, Emp_Date_of_Joining, Emp_Contact_Num;
+public Employee(int emp_ID, int emp_Basic, String emp_Contact_Num, int mgr_Id, int emp_Dept_ID, String emp_First_Name,
 		String emp_Last_Name, String emp_Grade, String emp_Designation, String emp_Gender, String emp_Marital_Status,
 		String emp_Home_Address, String emp_Date_of_Birth, String emp_Date_of_Joining) {
 	
@@ -34,10 +34,10 @@ public int getEmp_Basic() {
 public void setEmp_Basic(int emp_Basic) {
 	Emp_Basic = emp_Basic;
 }
-public int getEmp_Contact_Num() {
+public String getEmp_Contact_Num() {
 	return Emp_Contact_Num;
 }
-public void setEmp_Contact_Num(int emp_Contact_Num) {
+public void setEmp_Contact_Num(String emp_Contact_Num) {
 	Emp_Contact_Num = emp_Contact_Num;
 }
 public int getMgr_Id() {

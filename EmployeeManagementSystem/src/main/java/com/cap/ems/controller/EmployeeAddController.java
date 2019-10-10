@@ -32,7 +32,7 @@ public class EmployeeAddController extends HttpServlet {
 		String Emp_Gender=request.getParameter("Emp_Gender");
 		String Emp_Marital_Status=request.getParameter("Emp_Marital_Status");
 		String Emp_Home_Address=request.getParameter("Emp_Home_Address");
-		int Emp_Contact_Num=Integer.parseInt(request.getParameter("Emp_Contact_Num"));
+		String Emp_Contact_Num=request.getParameter("Emp_Contact_Num");
 		int Mgr_Id=Integer.parseInt(request.getParameter("Mgr_Id"));
 		
 		Employee emp=new Employee(Emp_ID, Emp_Basic, Emp_Contact_Num, Mgr_Id, Emp_Dept_ID, Emp_First_Name,
@@ -46,10 +46,13 @@ public class EmployeeAddController extends HttpServlet {
 		}
 		else {
 			response.sendRedirect("failure.jsp");
+			System.out.println("Else caluse");
 		}
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			response.sendRedirect("failure.jsp");
+			System.out.println("Caught");
 		}
 		
 	}

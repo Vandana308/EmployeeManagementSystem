@@ -78,14 +78,14 @@ Grade
 
 <p>
 <label>Select Grade</label>
-<select id="myList1">
-<option value="1">M1</option>
-<option value="2">M2</option>
-<option value="3">M3</option>
-<option value="4">M4</option>
-<option value="5">M5</option>
-<option value="6">M6</option>
-<option value="7">M7</option>
+<select id="myList1" name="Emp_Grade">
+<option value="M1">M1</option>
+<option value="M2">M2</option>
+<option value="M3">M3</option>
+<option value="M4">M4</option>
+<option value="M5">M5</option>
+<option value="M6">M6</option>
+<option value="M7">M7</option>
 </select>
 </p>
 </fieldset>
@@ -94,18 +94,34 @@ Designation  <input type="text" name="Emp_Designation"><br>
 
 Income       <input type="text" name="Emp_Basic"><br>
 <br>
-Gender:
-Male  <input type="radio" name="Emp_Gender" >
-Female<input type="radio" name="Emp_Gender" ><br>
+Gender
+<fieldset>
+
+<p>
+<label>Select Gender</label>
+<select id="myList2" name="Emp_Gender">
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+</select>
+</p>
+</fieldset>
+
 <br>
-Marital Status:<br>
-<br>
-<input type="radio" name= "a">Single<br>
-<input type="radio" name="a" >Married<br>
-<input type="radio" name= "a" >Divorced<br>
-<input type="radio" name="a" >Separated<br>
-<input type="radio" name="a">Widowed<br>
-<br>
+Employee Marital Status
+<fieldset>
+
+<p>
+<label>Select Marital Status</label>
+<select id="myList3" name="Emp_Marital_Status">
+<option value="Single">Single</option>
+<option value="Married">Married</option>
+<option value="Divorced">Divorced</option>
+<option value="Unmarried">Unmarried</option>
+<option value="Widowed">Widowed</option>
+</select>
+</p>
+</fieldset>
+
 Address       <input type="text" name="Emp_Home_Address"><br>
 <br>
 Contact Number<input type="text" name="Emp_Contact_Num"><br>

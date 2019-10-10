@@ -16,8 +16,9 @@ public class EmployeeDao {
 	Connection  con;
 	PreparedStatement ps;
 	ResultSet rs;
-	public EmployeeDao() throws SQLException  {
-		con=DriverManager.getConnection("jdbc:mysql://localhost/miniprojectems","root","India@12345");
+	public EmployeeDao() throws SQLException, ClassNotFoundException  {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/miniprojectems","root","India@12345");
 	}
 public boolean saveEmployee(Employee emp)throws Exception {
 		
@@ -35,7 +36,7 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		ps.setString(10, emp.getEmp_Gender());
 		ps.setString(11, emp.getEmp_Marital_Status());
 		ps.setString(12, emp.getEmp_Home_Address());
-		ps.setInt(13, emp.getEmp_Contact_Num());
+		ps.setString(13, emp.getEmp_Contact_Num());
 		ps.setInt(14, emp.getMgr_Id());
 		int n=ps.executeUpdate();
 		if(n>0) {
@@ -62,7 +63,7 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		emp.setEmp_Gender(rs.getString(10));
 		emp.setEmp_Marital_Status(rs.getString(11));
 		emp.setEmp_Home_Address(rs.getString(12));
-		emp.setEmp_Contact_Num(rs.getInt(13));
+		emp.setEmp_Contact_Num(rs.getString(13));
 		emp.setMgr_Id(rs.getInt(14));
 		return emp;
 		}
@@ -87,7 +88,7 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		emp.setEmp_Gender(rs.getString(10));
 		emp.setEmp_Marital_Status(rs.getString(11));
 		emp.setEmp_Home_Address(rs.getString(12));
-		emp.setEmp_Contact_Num(rs.getInt(13));
+		emp.setEmp_Contact_Num(rs.getString(13));
 		emp.setMgr_Id(rs.getInt(14));
 		empList.add(emp);
 		}

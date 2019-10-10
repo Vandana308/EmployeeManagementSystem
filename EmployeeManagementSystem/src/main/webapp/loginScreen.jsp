@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <style>
@@ -80,7 +80,7 @@ body{
 }
 </style>
     <head>
-        <title>Login and Registration Form Design</title>
+        <title>Login and Registration Form</title>
         <link rel="stylesheet" href="file1.css">
         
     </head>
@@ -91,7 +91,7 @@ body{
                 
                 
 
-                <form action="/login" class="login-form">
+                <form  class="login-form" action="login" method="post">
                     <input type="text" placeholder="UserName" name="UserName"/>
                     <input type="password" placeholder="UserPassword" name="UserPassword"/>
                     <button>Login</button>

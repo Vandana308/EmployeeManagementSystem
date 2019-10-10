@@ -34,10 +34,10 @@ cursor: pointer;
 <br>
 <br><br><br><br><br>
 <h1>Administrator Page</h1>
-<form action="addEmployeeScreen" method="post">
+<form action="AddEmployeeScreen.jsp">
 <input type="submit"  value="Add Employee" >
 </form>
-<form action="DisplayEmployee" method="post">
+<form >
 <input type="submit" value="Display Employee" >
 </form>
 </body>
