@@ -24,12 +24,12 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		
 		
 		ps=con.prepareStatement("insert into Employee values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-		ps.setInt(1, emp.getEmp_ID());
+		ps.setString(1, emp.getEmp_ID());
 		ps.setString(2, emp.getEmp_First_Name());
 		ps.setString(3, emp.getEmp_Last_Name());
 		ps.setString(4, emp.getEmp_Date_of_Birth());
 		ps.setString(5, emp.getEmp_Date_of_Joining());
-		ps.setInt(6, emp.getEmp_Dept_ID());
+		ps.setString(6, emp.getEmp_Dept_ID());
 		ps.setString(7, emp.getEmp_Grade());
 		ps.setString(8, emp.getEmp_Designation());
 		ps.setInt(9, emp.getEmp_Basic());
@@ -51,12 +51,12 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		rs=ps.executeQuery();
 		Employee emp=new Employee();
 		if(rs.next()) {
-		emp.setEmp_ID(rs.getInt(1));
+		emp.setEmp_ID(rs.getString(1));
 		emp.setEmp_First_Name(rs.getString(2));
 		emp.setEmp_Last_Name(rs.getString(3));
 		emp.setEmp_Date_of_Birth(rs.getString(4));
 		emp.setEmp_Date_of_Joining(rs.getString(5));
-		emp.setEmp_Dept_ID(rs.getInt(6));
+		emp.setEmp_Dept_ID(rs.getString(6));
 		emp.setEmp_Grade(rs.getString(7));
 		emp.setEmp_Designation(rs.getString(8));
 		emp.setEmp_Basic(rs.getInt(9));
@@ -76,12 +76,12 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		List<Employee> empList=new ArrayList<>();
 		while(rs.next()) {
 		Employee emp=new Employee();
-		emp.setEmp_ID(rs.getInt(1));
+		emp.setEmp_ID(rs.getString(1));
 		emp.setEmp_First_Name(rs.getString(2));
 		emp.setEmp_Last_Name(rs.getString(3));
 		emp.setEmp_Date_of_Birth(rs.getString(4));
 		emp.setEmp_Date_of_Joining(rs.getString(5));
-		emp.setEmp_Dept_ID(rs.getInt(6));
+		emp.setEmp_Dept_ID(rs.getString(6));
 		emp.setEmp_Grade(rs.getString(7));
 		emp.setEmp_Designation(rs.getString(8));
 		emp.setEmp_Basic(rs.getInt(9));

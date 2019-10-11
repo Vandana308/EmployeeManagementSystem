@@ -7,7 +7,7 @@ public class Employee {
 	public Employee(String emp_ID, int emp_Basic, String emp_Contact_Num, int mgr_Id, String emp_Dept_ID, String emp_First_Name,
 			String emp_Last_Name, String emp_Grade, String emp_Designation, String emp_Gender, String emp_Marital_Status,
 			String emp_Home_Address, String emp_Date_of_Birth, String emp_Date_of_Joining) {
-		
+	            	
 		this.Emp_ID = emp_ID;
 		this.Emp_Basic = emp_Basic;
 		this.Emp_Contact_Num = emp_Contact_Num;

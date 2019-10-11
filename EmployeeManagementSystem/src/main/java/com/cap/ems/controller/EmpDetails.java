@@ -21,7 +21,7 @@ public class EmpDetails extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
+	{          
 		try {Class.forName("com.mysql.jdbc.Driver");
 			  BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 			    String Emp_ID=request.getParameter("Emp_ID");				
