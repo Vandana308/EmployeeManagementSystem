@@ -1,3 +1,8 @@
+<%@page import="com.cap.ems.model.*"%>
+<%@page import="javax.websocket.SendResult"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +52,7 @@ th
 </head>
 <body background="CAP3.jpg">
 	<p style="text-align: center;"font-family:sans-serif;"><font size="6" color="black">
-<b>WELCOME USER</b>
+<b>WELCOME ${UserNameObj}</b>
 <hr>
 </font>
 </p>
@@ -56,50 +61,65 @@ th
 <br>
 <br>
 <br>
+<%
+response.setHeader("Pragma", "no-cache"); 
+Employee empDetail =(Employee)session.getAttribute("EmployeeObj");
+
+if (session.getAttribute("UserNameObj")==null)
+{
+	response.sendRedirect("login.jsp");
+
+}
+%>
 
 <table style="width:10%  " align="left">
 	<caption><b>USER DETAILS</b></caption>
 	
 <tr>
-<th bgcolor="#00CCFF">EMP ID </th>
-<td bgcolor="#0099FF">             </td>
+<th bgcolor="#00CCFF">EMPlOYEE NAME </th>
+<td bgcolor="#0099FF"><%=empDetail.getEmp_First_Name() %></td><td bgcolor="#0099FF"><%=empDetail.getEmp_Last_Name() %></td>
 </tr>
 <tr>
-<th bgcolor="#00CCFF">USER ID </th>
+<th bgcolor="#00CCFF">EMPLOYEE ID </th>
 <td bgcolor="#0099FF
-">             </td>
+">  <%=empDetail.getEmp_ID() %> </td>
 </tr>
 <tr>
-<th bgcolor="#00CCFF">HIRE DATE </th>
+<th bgcolor="#00CCFF">JOINING DATE </th>
 <td bgcolor="#0099FF
-"></td>
+"><%=empDetail.getEmp_Date_of_Joining() %></td>
 </tr>
 
 <tr>
-<th bgcolor="#00CCFF">DESIGNATION</th>
+<th bgcolor="#00CCFF">EMPLOYEE DESIGNATION</th>
 <td bgcolor="#0099FF
-"></td>
+"><%=empDetail.getEmp_Designation() %></td>
 </tr>
 <tr>
-<th bgcolor="#00CCFF">SUPERVISOR </th>
+<th bgcolor="#00CCFF">DEPARTMENT ID </th>
 <td bgcolor="#0099FF
-"></td>
+"><%=empDetail.getEmp_Dept_ID() %></td>
 </tr>
 <tr>
-<th bgcolor="#00CCFF">LOCATION</th>
+<th bgcolor="#00CCFF">EMPLOYEE GRADE</th>
 <td bgcolor="#0099FF
-"></td>
+"><%=empDetail.getEmp_Grade() %></td>
 </tr>
 <tr>
-<th bgcolor="#00CCFF">EMAIL ID</th>
+<th bgcolor="#00CCFF">MANAGER ID</th>
 <td bgcolor="#0099FF
-"></td>
+"><%=empDetail.getMgr_Id() %></td>
 </tr>
+
+
 
 </span>
 <div class="search-box" >
-	<input class ="search-txt" type="text" name="" placeholder="Search an employee" align="right">
-	<a class="search-btn" href="#">
+<form action ="empdetails" method ="post">
+Employee Details: <input type="text" name="Emp_ID" placeholder="Search an employee"><br>
+<input type = "submit" value="submit">
+	<!-- <input class ="search-txt" type="text" name="" placeholder="Search an employee" align="right">
+	<a class="search-btn" href="#"> -->
 		
 	</a>
 	<br>

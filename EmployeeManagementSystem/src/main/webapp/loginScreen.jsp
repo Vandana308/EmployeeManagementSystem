@@ -91,7 +91,7 @@ body{
                 
                 
 
-                <form  class="login-form" action="login" method="post">
+                <form  class="login-form" action="LoginServlet" method="post">
                     <input type="text" placeholder="UserName" name="UserName"/>
                     <input type="password" placeholder="UserPassword" name="UserPassword"/>
                     <button>Login</button>
