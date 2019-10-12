@@ -10,7 +10,7 @@ import java.util.List;
 
 import com.cap.ems.model.Employee;
 import com.cap.ems.model.Leave;
-import com.cap.ems.utility.FunctionResponse;
+
 
 public class EmployeeDao {
 	Connection  con;
@@ -18,7 +18,7 @@ public class EmployeeDao {
 	ResultSet rs;
 	public EmployeeDao() throws SQLException, ClassNotFoundException  {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/miniprojectems","root","India@12345");
+		con=DriverManager.getConnection("jdbc:mysql://192.168.12.125:3306/miniprojectems","rajul","qwer1234");
 	}
 public boolean saveEmployee(Employee emp)throws Exception {
 		
@@ -29,7 +29,7 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		ps.setString(3, emp.getEmp_Last_Name());
 		ps.setString(4, emp.getEmp_Date_of_Birth());
 		ps.setString(5, emp.getEmp_Date_of_Joining());
-		ps.setString(6, emp.getEmp_Dept_ID());
+		ps.setInt(6, emp.getEmp_Dept_ID());
 		ps.setString(7, emp.getEmp_Grade());
 		ps.setString(8, emp.getEmp_Designation());
 		ps.setInt(9, emp.getEmp_Basic());
@@ -56,7 +56,7 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		emp.setEmp_Last_Name(rs.getString(3));
 		emp.setEmp_Date_of_Birth(rs.getString(4));
 		emp.setEmp_Date_of_Joining(rs.getString(5));
-		emp.setEmp_Dept_ID(rs.getString(6));
+		emp.setEmp_Dept_ID(rs.getInt(6));
 		emp.setEmp_Grade(rs.getString(7));
 		emp.setEmp_Designation(rs.getString(8));
 		emp.setEmp_Basic(rs.getInt(9));
@@ -81,7 +81,7 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		emp.setEmp_Last_Name(rs.getString(3));
 		emp.setEmp_Date_of_Birth(rs.getString(4));
 		emp.setEmp_Date_of_Joining(rs.getString(5));
-		emp.setEmp_Dept_ID(rs.getString(6));
+		emp.setEmp_Dept_ID(rs.getInt(6));
 		emp.setEmp_Grade(rs.getString(7));
 		emp.setEmp_Designation(rs.getString(8));
 		emp.setEmp_Basic(rs.getInt(9));
@@ -107,7 +107,7 @@ public boolean saveEmployee(Employee emp)throws Exception {
 	}
 	
 	public boolean saveLeaves(Leave lv) throws SQLException {
-		FunctionResponse fresResponse = new FunctionResponse();
+//		FunctionResponse fresResponse = new FunctionResponse();
 		ps = con.prepareStatement("INSERT INTO leave_history values(?,?,?,?,?,?,?)");
 		
 		ps.setInt(1, lv.getLeave_Id());

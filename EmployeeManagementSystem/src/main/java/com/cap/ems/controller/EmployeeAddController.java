@@ -18,6 +18,7 @@ public class EmployeeAddController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	EmployeeService es;
+	Employee emp;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int Emp_ID=Integer.parseInt(request.getParameter("Emp_ID"));
@@ -35,9 +36,10 @@ public class EmployeeAddController extends HttpServlet {
 		String Emp_Contact_Num=request.getParameter("Emp_Contact_Num");
 		int Mgr_Id=Integer.parseInt(request.getParameter("Mgr_Id"));
 		
-		Employee emp=new Employee(Emp_ID, Emp_Basic, Emp_Contact_Num, Mgr_Id, Emp_Dept_ID, Emp_First_Name,
-				Emp_Last_Name, Emp_Grade, Emp_Designation, Emp_Gender, Emp_Marital_Status,
-				Emp_Home_Address, Emp_Date_of_Birth, Emp_Date_of_Joining );
+		
+//		emp=new Employee(Emp_ID, Emp_Basic, Emp_Contact_Num, Mgr_Id, Emp_Dept_ID, Emp_First_Name,
+//				Emp_Last_Name, Emp_Grade, Emp_Designation, Emp_Gender, Emp_Marital_Status,
+//				Emp_Home_Address, Emp_Date_of_Birth, Emp_Date_of_Joining );
 		
 		es=new EmployeeService();
 		try {

@@ -53,7 +53,7 @@ public class LoginDao {
 		emp.setMgr_Id(rs.getInt("Mgr_Id"));
 		emp.setEmp_Date_of_Joining(rs.getString("Emp_Date_of_Joining"));
 		emp.setEmp_Designation(rs.getString("Emp_Designation"));
-		emp.setEmp_Dept_ID(rs.getString("Emp_Dept_ID"));
+		emp.setEmp_Dept_ID(rs.getInt("Emp_Dept_ID"));
 		emp.setEmp_Grade(rs.getString("Emp_Grade"));
 		
 		

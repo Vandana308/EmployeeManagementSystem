@@ -32,11 +32,9 @@
     <groupId>org.apache.tomcat</groupId>
     <artifactId>tomcat-jdbc</artifactId>
     <version>9.0.26</version>
-</dependency>
-
-    
-  </dependencies>
-  <build>
+</dependency>    
+   </dependencies>
+<!--  <build>
     <finalName>EmployeeManagementSystem</finalName>
-  </build>
+  </build> -->
 </project>

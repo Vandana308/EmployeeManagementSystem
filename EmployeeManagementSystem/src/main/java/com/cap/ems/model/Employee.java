@@ -1,10 +1,9 @@
 package com.cap.ems.model;
 
 public class Employee {
-	private int  Emp_Basic,  Mgr_Id;
-	String Emp_Dept_ID;
+	private int  Emp_Basic, Emp_Dept_ID,  Mgr_Id;
 	private String Emp_ID,Emp_First_Name, Emp_Last_Name, Emp_Grade, Emp_Designation,  Emp_Gender,  Emp_Marital_Status,  Emp_Home_Address, Emp_Date_of_Birth, Emp_Date_of_Joining, Emp_Contact_Num;
-	public Employee(String emp_ID, int emp_Basic, String emp_Contact_Num, int mgr_Id, String emp_Dept_ID, String emp_First_Name,
+	public Employee(String emp_ID, int emp_Basic, String emp_Contact_Num, int mgr_Id, int emp_Dept_ID, String emp_First_Name,
 			String emp_Last_Name, String emp_Grade, String emp_Designation, String emp_Gender, String emp_Marital_Status,
 			String emp_Home_Address, String emp_Date_of_Birth, String emp_Date_of_Joining) {
 	            	
@@ -47,10 +46,10 @@ public class Employee {
 	public void setMgr_Id(int mgr_Id) {
 		Mgr_Id = mgr_Id;
 	}
-	public String getEmp_Dept_ID() {
+	public int getEmp_Dept_ID() {
 		return Emp_Dept_ID;
 	}
-	public void setEmp_Dept_ID(String emp_Dept_ID) {
+	public void setEmp_Dept_ID(int emp_Dept_ID) {
 		Emp_Dept_ID = emp_Dept_ID;
 	}
 	public String getEmp_First_Name() {

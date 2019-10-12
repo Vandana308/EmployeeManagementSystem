@@ -33,7 +33,7 @@ public class Modifydao{
 		ps.setInt(4,emp.getEmp_Basic());
 		ps.setString(5,emp.getEmp_Marital_Status());
 		ps.setString(6, emp.getEmp_Home_Address());
-		ps.setInt(7, emp.getEmp_Contact_Num());
+		ps.setString(7, emp.getEmp_Contact_Num());
 		ps.setInt(8, emp.getMgr_Id());
 		int n=ps.executeUpdate();
 		if(n>0) {
