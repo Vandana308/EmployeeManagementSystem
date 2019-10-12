@@ -4,6 +4,16 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <!--<servlet>
+  	<servlet-name>ShowAllEmpDetailsServlet</servlet-name>
+  	<display-name>ShowAllEmpDetailsServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.cap.ems.controller.ShowAllEmpDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ShowAllEmpDetailsServlet</servlet-name>
+  	<url-pattern>/ShowAllEmpDetailsServlet</url-pattern>
+  </servlet-mapping>
   <servlet>
   	<servlet-name>ShowAllEmployeeServlet</servlet-name>
   	<display-name>ShowAllEmployeeServlet</display-name>
@@ -14,7 +24,7 @@
   	<servlet-name>ShowAllEmployeeServlet</servlet-name>
   	<url-pattern>/ShowAllEmployeeServlet</url-pattern>
   </servlet-mapping>
-  <!-- <servlet>
+   <servlet>
   	<servlet-name>com.cap.ems.controller.EmployeeAddController</servlet-name>
   	<display-name>com.cap.ems.controller.EmployeeAddController</display-name>
   	<description></description>
