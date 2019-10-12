@@ -62,7 +62,7 @@ body {
 	height: 100vh;
 	background-image: linear- gradient(rgba(0, 0, 0, 0.5),
 		rgba(0, 0, 0, 0.5));
-	background-image: url("dd.jpg");
+	background-image: url("AdminScreen.jpg");
 	background-size: cover;
 	background-position: Left;
 	display: flex;
@@ -139,7 +139,7 @@ h1 {
 </style>
 	<div class="header">
 
-		<form action="ShowAllEmpDetails" method="post">
+	<form action="ShowAllEmpDetails" method="post">
 
 			<div class="form">
 				<h1>Admin Home Page</h1>
@@ -160,26 +160,28 @@ h1 {
 
 			<article>
 				<div class="form-box">
-
-					<button class="show-btn" type="Show All">Show All Employee</button>
-					<br>
-					<br> <a href="AddEmployeeScreen.jsp">
-						<button class="add-btn" type="button">Add</button>
+		
+						<button class="show-btn" type="Show All">Show All
+							Employee</button>
 						<br>
-					<br>
-					<br>
-					<br>
-					</a> <input type="text" class="search-field employee ID"
-						placeholder="Employee Name"><br>
+			
+					<form action="AddEmployee" method="post">
+						<br> <a href="AddEmployeeScreen.jsp">
+							<button class="add-btn" type="button">Add</button> <br> <br>
+					</form>
+					<br> <br>
+					<form action="ModifyEmployee" method="post">
+						</a> <input type="text" class="search-field employee ID"
+							placeholder="Employee Name"><br>
 
-					<button class="modify-btn" type="button">Modify</button>
-
+						<button class="modify-btn" type="button">Modify</button>
+					</form>
 
 
 				</div>
 			</article>
 
+	</form>
 
-		</form>
 </body>
 </html>
