@@ -12,7 +12,6 @@ import com.cap.ems.model.Employee;
 import com.cap.ems.model.Leave;
 
 public class LeaveDao {
-
 	Connection con;
 	PreparedStatement ps;
 	ResultSet rs;
@@ -22,14 +21,12 @@ public class LeaveDao {
 	}
 	public boolean saveLeaves(Leave lv) throws SQLException {
 		
-		ps = con.prepareStatement("INSERT INTO leave_history(emp_Id, leave_balance, noofdays_applied, date_from, date_to, status) values(?,?,?,?,?,?)");
+		ps = con.prepareStatement("INSERT INTO leave_history(emp_Id, date_from, date_to, status) values(?,?,?,?)");
 		
-		ps.setInt(1, lv.getEmp_ID());
-		ps.setLong(2, lv.getLeave_balance());
-		ps.setLong(3, lv.getNoOfDaysApplied());
-		ps.setString(4, lv.getDate_from());
-		ps.setString(5, lv.getDate_to());
-		ps.setString(6, lv.getStatus());
+		ps.setString(1, lv.getEmployeeId());
+		ps.setString(2, lv.getDate_from());
+		ps.setString(3, lv.getDate_to());
+		ps.setString(4, lv.getStatus());
 		int n=ps.executeUpdate();
 		if(n>0) {
 			return true;
@@ -39,22 +36,44 @@ public class LeaveDao {
 		}
 	}
 		
-	public List<Leave> getleaves() throws Exception {	
+	public List<Leave> getLeaves() throws Exception {	
 		ps=con.prepareStatement("select * from leave_history");
 		rs=ps.executeQuery();
 		List<Leave> leaveList=new ArrayList<>();
 		while(rs.next()) {
 		Leave lv=new Leave();
 		lv.setLeave_Id(rs.getInt(1));
-		lv.setEmp_ID(rs.getInt(2));
-		lv.setLeave_balance(rs.getInt(3));
-		lv.setNoOfDaysApplied(rs.getInt(4));
-		lv.setDate_from(rs.getString(5));
-		lv.setDate_to(rs.getString(6));
+		lv.setEmployeeId(rs.getString(2));
+		lv.setDate_from(rs.getString(3));
+		lv.setDate_to(rs.getString(4));
+		lv.setStatus(rs.getString(5));
 		leaveList.add(lv);
 		}
 		return leaveList;
 			
 	}
+	
+	public boolean approveLeaves(Leave lv) throws SQLException{
+	String query="update leave_history set status='approved' where status='applied'";
+	PreparedStatement ps = con.prepareStatement(query);
+	
+		int n=ps.executeUpdate();
+		if(n>0) {
+			return true;
+		}
+		return false;
+		
+	}
+	public boolean rejectLeaves(Leave lv) throws SQLException{
+		String query="update leave_history set status='rejected' where status='applied'";
+		PreparedStatement ps = con.prepareStatement(query);
+			int n=ps.executeUpdate();
+			if(n>0) {
+				return true;
+			}
+			return false;
+			
+		}
+	
 
 }

@@ -8,19 +8,36 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.cap.ems.dao.LeaveDao;
+import com.cap.ems.model.Leave;
+import com.cap.ems.service.LeaveService;
 
 /**
  * Servlet implementation class ApproveLeaveController
  */
 public class ApproveLeaveController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-	
+    Leave lv; 
+    LeaveService ls;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String status= request.getParameter("status");
-		LeaveDao dao;
-		HttpSession session= request.getSession();
-		
+	String status= "Approved";
+	lv= new Leave(status);
+	ls= new LeaveService();
+	try {
+	if(ls.approveLeaves(lv)) {
+		response.sendRedirect("LeaveApproved.jsp");
 	}
+	else {
+		response.sendRedirect("ErrorLeave.jsp");
+		System.out.println("Else caluse");
+	}
+	}
+	catch (Exception e) {
+		e.printStackTrace();
+		response.sendRedirect("ErrorLeave.jsp");
+		System.out.println("Caught");
+	}
+	
 
+
+	}
 }
