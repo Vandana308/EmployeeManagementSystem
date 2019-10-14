@@ -9,6 +9,18 @@
 <title>All Employee Details</title>
 
 <style type="text/css">
+input[value=Logout]{
+position:fixed;
+right:10px;
+top:5px;
+background-color: #0067a4;
+color: white;
+align: middle;
+border: none;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;}
 header {
 	background-color: #333399;
 	padding: 1mm;
@@ -77,10 +89,13 @@ tr:nth-child(even) {
 				out.print("<td>" + emp.getEmp_Marital_Status() + "</td>");
 				out.print("<td>" + emp.getEmp_Home_Address() + "</td>");
 				out.print("<td>" + emp.getEmp_Contact_Num() + "</td>");
-				out.print("<td>" + emp.getMgr_Id() + "</td></tr>");
+				out.print("<td>" + emp.getMgrId() + "</td></tr>");
 
 			}
 		%>
 	</table>
+<form action="LogoutController" method="get">
+<input type="submit" value="Logout">
+</form>	
 </body>
 </html>

@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.cap.ems.model.Employee;
 import com.cap.ems.model.Leave;
+import com.cap.ems.model.ModifyEmployee;
 
 
 public class EmployeeDao {
@@ -18,7 +19,7 @@ public class EmployeeDao {
 	ResultSet rs;
 	public EmployeeDao() throws SQLException, ClassNotFoundException  {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		con=DriverManager.getConnection("jdbc:mysql://192.168.12.125:3306/miniprojectems","rajul","qwer1234");
+		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/miniprojectems","root","India@12345");
 	}
 public boolean saveEmployee(Employee emp)throws Exception {
 		
@@ -37,7 +38,7 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		ps.setString(11, emp.getEmp_Marital_Status());
 		ps.setString(12, emp.getEmp_Home_Address());
 		ps.setString(13, emp.getEmp_Contact_Num());
-		ps.setInt(14, emp.getMgr_Id());
+		ps.setString(14, emp.getMgrId());
 		int n=ps.executeUpdate();
 		if(n>0) {
 			return true;
@@ -45,9 +46,9 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		return false;
 	}
 	
-	public Employee getEmployeeById(int Emp_ID) throws Exception {	
+	public Employee getEmployeeById(String Emp_ID) throws Exception {	
 		ps=con.prepareStatement("select * from employee where Emp_ID=?");
-		ps.setInt(1, Emp_ID);
+		ps.setString(1, Emp_ID);
 		rs=ps.executeQuery();
 		Employee emp=new Employee();
 		if(rs.next()) {
@@ -64,7 +65,7 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		emp.setEmp_Marital_Status(rs.getString(11));
 		emp.setEmp_Home_Address(rs.getString(12));
 		emp.setEmp_Contact_Num(rs.getString(13));
-		emp.setMgr_Id(rs.getInt(14));
+		emp.setMgrId(rs.getString(14));
 		return emp;
 		}
 		return null;	
@@ -89,7 +90,7 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		emp.setEmp_Marital_Status(rs.getString(11));
 		emp.setEmp_Home_Address(rs.getString(12));
 		emp.setEmp_Contact_Num(rs.getString(13));
-		emp.setMgr_Id(rs.getInt(14));
+		emp.setMgrId(rs.getString(14));
 		empList.add(emp);
 		}
 		return empList;
@@ -105,26 +106,28 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		}
 		return false;
 	}
-	
-	public boolean saveLeaves(Leave lv) throws SQLException {
-//		FunctionResponse fresResponse = new FunctionResponse();
-		ps = con.prepareStatement("INSERT INTO leave_history values(?,?,?,?,?,?,?)");
+	public boolean updateEmployeeDetails(ModifyEmployee emp) throws SQLException {
+		ps = con.prepareStatement("update Employee set Emp_Dept_ID=?, Emp_Grade=?, Emp_Designation=?, Emp_Basic=?, Emp_Marital_Status=?, Emp_Home_Address=?, Emp_Contact_Num=?, Mgr_Id=?   where Emp_Id=?");
 		
-		ps.setInt(1, lv.getLeave_Id());
-		ps.setInt(2, lv.getEmp_ID());
-		ps.setInt(3, lv.getLeave_balance());
-		ps.setInt(4, lv.getNoofdays_applied());
-		ps.setString(5, lv.getDate_from());
-		ps.setString(6, lv.getDate_to());
-		ps.setString(7, lv.getStatus());
-		int n=ps.executeUpdate();
+		ps.setString(9, emp.getEmp_ID());
+		ps.setInt(1, emp.getEmp_Dept_ID());
+		ps.setString(2, emp.getEmp_Grade());
+		ps.setString(3,emp.getEmp_Designation());
+		ps.setInt(4,emp.getEmp_Basic());
+		ps.setString(5,emp.getEmp_Marital_Status());
+		ps.setString(6, emp.getEmp_Home_Address());
+		ps.setString(7, emp.getEmp_Contact_Num());
+		ps.setString(8, emp.getMgrId());
+		
+
+		int n=ps.executeUpdate();	
 		if(n>0) {
 			return true;
 		}
-		else {
-			return false;
-		}
+		return false;	
 	}
+	
+	
 	
 }
 

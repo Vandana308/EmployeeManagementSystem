@@ -6,6 +6,18 @@
 <meta charset="ISO-8859-1">
 <title>Employee Added Successfully</title>
 <style>
+input[value=Logout]{
+position:fixed;
+right:10px;
+top:5px;
+background-color: #0067a4;
+color: white;
+align: middle;
+border: none;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;}
 body {
    	text-align:center;
 	background-image: url("AdminScreen.jpg");
@@ -19,5 +31,8 @@ h1{color: #0067a4;l}
 <body>
 <br><br><br><br><br><br><br>
 <h1>Employee Added Successfully</h1>
+<form action="LogoutController" method="get">
+<input type="submit" value="Logout">
+</form>
 </body>
 </html>

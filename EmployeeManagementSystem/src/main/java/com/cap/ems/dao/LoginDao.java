@@ -13,8 +13,8 @@ import com.cap.ems.model.Employee;
 public class LoginDao {
 	String url = "jdbc:mysql://localhost:3306/miniprojectems"; //:3306
 	String uname = "root";
-	String password = "incorrect";
-	
+	String password = "India@12345";
+	boolean status=false;
              
 	public boolean check(String username, String userpassword) throws Exception 
 	{
@@ -23,7 +23,7 @@ public class LoginDao {
 		
 		Connection con = DriverManager.getConnection(url,uname,password);
 	   // String query = "select * from User_Master where UserName = ? and UserPassword =?";
-	    PreparedStatement st = con.prepareStatement("select * from User_Master where UserName = ? and UserPassword =? ;");
+	    PreparedStatement st = con.prepareStatement("select * from User_Master where UserName = ? and UserPassword =? ");
 	    st.setString(1, username);
 	    st.setString(2, userpassword);
 	   
@@ -32,10 +32,11 @@ public class LoginDao {
 	  
 	    if(rs.next())
 	    {
-	    	return true;
+	    	status= true;
 	    }
 	    else		
-	    	return false;
+	    	status= false;
+	    return status;
 	}
 	
 	public Employee getEmpDetailById(String empId) throws SQLException {
@@ -50,7 +51,7 @@ public class LoginDao {
 		emp.setEmp_ID(rs.getString("Emp_ID"));
 		emp.setEmp_First_Name(rs.getString("Emp_First_Name"));
 		emp.setEmp_Last_Name(rs.getString("Emp_last_Name"));
-		emp.setMgr_Id(rs.getInt("Mgr_Id"));
+		emp.setMgrId(rs.getString("Mgr_Id"));
 		emp.setEmp_Date_of_Joining(rs.getString("Emp_Date_of_Joining"));
 		emp.setEmp_Designation(rs.getString("Emp_Designation"));
 		emp.setEmp_Dept_ID(rs.getInt("Emp_Dept_ID"));

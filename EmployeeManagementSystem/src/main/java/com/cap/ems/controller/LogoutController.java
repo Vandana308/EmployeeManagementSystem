@@ -20,7 +20,7 @@ public class LogoutController extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.removeAttribute("UserNameObj");
 		session.invalidate();
-		response.sendRedirect("loginScreen.jsp");
+		response.sendRedirect("LoginScreen.jsp");
 		
 	}
 }

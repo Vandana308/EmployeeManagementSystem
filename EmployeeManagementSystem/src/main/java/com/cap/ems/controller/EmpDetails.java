@@ -10,6 +10,7 @@ import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,8 +18,9 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class EmpDetails
  */
+@WebServlet("/empdetails")
 public class EmpDetails extends HttpServlet {
-
+	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{          
@@ -27,7 +29,7 @@ public class EmpDetails extends HttpServlet {
 			    String Emp_ID=request.getParameter("Emp_ID");				
 				String url = "jdbc:mysql://localhost:3306/miniprojectems";
 				String uname = "root";
-				String password = "incorrect";
+				String password = "India@12345";
 				
 			    String query = "select * from employee where Emp_ID='"+Emp_ID+"'";
 			    
@@ -54,7 +56,7 @@ public class EmpDetails extends HttpServlet {
 				request.setAttribute("e", Designation);
 				request.setAttribute("f", Contact_Number);
 				
-				RequestDispatcher rd=request.getRequestDispatcher("showEmployee.jsp");
+				RequestDispatcher rd=request.getRequestDispatcher("ShowEmployee.jsp");
 				
 			    rd.forward(request, response);			
 				}

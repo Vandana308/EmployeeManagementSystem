@@ -4,24 +4,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Leave Management System</title>
+<title>Search Form</title>
 <link rel="stylesheet" href="bb.css">
 </head>
 <body>
-
 	<style>
-h1 {
-	background-color: #666;
-	padding: 30px;
-	background: rgba(0, 0, 0, 0.5);
-	text-align: center;
-	font-size: 35px;
-	color: white;
-}
-input[value=Logout]{
+	input[value=Logout]{
 position:fixed;
 right:10px;
-top:35px;
+top:30px;
 background-color: #0067a4;
 color: white;
 align: middle;
@@ -30,6 +21,14 @@ padding: 16px 32px;
 text-decoration: none;
 margin: 4px 2px;
 cursor: pointer;}
+h1 {
+	background-color: #666;
+	padding: 30px;
+	background: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	font-size: 35px;
+	color: white;
+}
 
 nav {
 	float: left;
@@ -39,39 +38,32 @@ nav {
 	padding: 20px;
 }
 
-
 /* Style the list inside the menu */
 nav ul {
 	list-style-type: none;
-	font-size: 20px;
-
-	
 	padding: 0;
 }
 
 body {
 	margin: 0;
-	font-size: 20px;
 	padding: 0;
-	color: white;
 }
 
-input[type=text] {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 10px 0;
-	box-sizing: border-box;
-	border: 2px solid blue;
-	border-radius: 4px;
+.show-btn {
+	margin-top: 20px;
+	margin-bottom: 70px;
+	font-size: 20px;
+	height: 50px;
+	width: 400px;
+	background: #0067a4;
+	border: none;
+	color: #000;
+	border-radius: 25px;
 }
 
-input[type=date] {
-	width: 40%;
-	padding: 12px 20px;
-	margin: 10px 0;
-	box-sizing: border-box;
-	border: 2px solid blue;
-	border-radius: 4px;
+.show-btn:hover {
+	background: #ffc107;
+	cursor: pointer;
 }
 
 .style {gradient (rgba(0,0,0,0.5),rgba(0,0,0,0.5));
@@ -115,12 +107,26 @@ h1 {
 	width: 400px;
 }
 
+.add-btn {
+	height: 50px;
+	width: 400px;
+	background: #0067a4;
+	font-size: 20px;
+	border: none;
+	color: #000;
+	border-radius: 25px;
+}
+
+.add-btn:hover {
+	background: #ffc107;
+	cursor: pointer;
+}
+
 .form-box {
 	background: rgba(0, 0, 0, 0.5);
 	padding: 30px;
 	margin-left: 390px;
 	height: 430px;
-	text-align: inline;
 }
 
 .modify-btn {
@@ -145,22 +151,18 @@ h1 {
 </style>
 	<div class="header">
 
-		<form action="ApplyLeaveController" method="post">
+		<form action="ShowAllEmpDetails" method="post">
 
 			<div class="form">
-				<h1>Leave Management System</h1>
+				<h1>Admin Home Page</h1>
 			</div>
 			<div>
 				<section>
 					<nav>
 						<ul>
-							<br> 
-							Employee Id: <input  name="emp_Id" required><br>
-					
-							<br>
-							<br> 
-							<br>
-							<br> 
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
 						</ul>
 					</nav>
 
@@ -170,26 +172,28 @@ h1 {
 
 			<article>
 				<div class="form-box">
-					<br> From: <input type="date" name="date_from" required><br>
-					To: <input type="date" name="date_to" required><br> <br> <br>
-			
-					<button class="modify-btn" type="submit">Apply Leave</button>
+					
+					<button class="show-btn" type="Show All">Show All Employee</button>
+					<br>
+					<br> </form> <a href="AddEmployeeScreen.jsp">
+						<button class="add-btn" type="button">Add</button>
+						<br>
+					<br>
+					<br>
+					<br>
+					</a> <form action="GetEmployeeDetailsServlet" method="post">
+						 <input type="text" class="search-field employee ID" placeholder="Enter Employee ID" name="EmployeeID" required><br>
+						<button class="modify-btn" type="submit">Modify</button>
+					</form>
 
-					<script> 
-        function submission_alert() {
-        
-        		alert("Leave has been successfully applied");
-        }
-        </script> 
 
 				</div>
 			</article>
 
 
-		</form>
+		
 		<form action="LogoutController" method="get">
-<input type="submit" value="Logout">
-</form>
-	</div>	
+						<input type="submit" value="Logout">
+					</form>
 </body>
 </html>

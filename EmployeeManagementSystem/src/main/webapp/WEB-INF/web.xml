@@ -3,7 +3,41 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+<display-name>Archetype Created Web Application</display-name>
+<!-- <servlet>
+	<servlet-name>GetEmployeeDetailsServlet</servlet-name>
+	<display-name>GetEmployeeDetailsServlet</display-name>
+	<description></description>
+	<servlet-class>com.cap.ems.controller.GetEmployeeDetailsServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>GetEmployeeDetailsServlet</servlet-name>
+	<url-pattern>/GetEmployeeDetailsServlet</url-pattern>-->
+<!-- </servlet-mapping>
+<servlet>
+	<servlet-name>ModifyEmpDetailsController</servlet-name>
+	<display-name>ModifyEmpDetailsController</display-name>
+	<description></description>
+	<servlet-class>com.cap.ems.controller.ModifyEmpDetailsController</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ModifyEmpDetailsController</servlet-name>
+	<url-pattern>/ModifyEmpDetailsController</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>ModifyEmpDetailsController</servlet-name>
+	<url-pattern>/modifyEmployee</url-pattern>
+</servlet-mapping> -->
+<!-- <servlet>
+	<servlet-name>LoginServlet</servlet-name>
+	<display-name>LoginServlet</display-name>
+	<description></description>
+	<servlet-class>com.cap.ems.controller.LoginServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>LoginServlet</servlet-name>
+	<url-pattern>/LoginServlet</url-pattern>
+</servlet-mapping> -->
   <!--<servlet>
   	<servlet-name>ShowAllEmpDetailsServlet</servlet-name>
   	<display-name>ShowAllEmpDetailsServlet</display-name>
@@ -43,8 +77,9 @@
   	<servlet-class>com.cap.ems.controller.EmpDetails</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>LoginServlet</servlet-name>
-  	<display-name>LoginServlet</display-name>
+  
+ 	<servlet-name>com.cap.ems.controller.LoginServlet</servlet-name>
+  	<display-name>com.cap.ems.controller.LoginServlet</display-name>
   	<description></description>
   	<servlet-class>com.cap.ems.controller.LoginServlet</servlet-class>
   </servlet>
@@ -67,12 +102,15 @@
   	<url-pattern>/EmpDetails</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>LoginServlet</servlet-name>
+  	<servlet-name>com.cap.ems.controller.LoginServlet</servlet-name>
   	<url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+  
   	<servlet-name>LogoutController</servlet-name>
   	<url-pattern>/LogoutController</url-pattern>
   </servlet-mapping>
-   -->
+ -->
+
+
 </web-app>

@@ -54,7 +54,7 @@ body{
                 
                 <ul class="main-nav">
 
-                    <div class="login">    <a href="loginScreen.jsp">login</a></div>
+                    <div class="login">    <a href="LoginScreen.jsp">login</a></div>
                     
                     
                 </ul>

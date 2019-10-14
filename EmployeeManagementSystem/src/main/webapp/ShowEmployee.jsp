@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ 
 <!DOCTYPE html>
 <html>
         
@@ -8,6 +9,18 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style type="text/css">
+input[value=Logout]{
+position:fixed;
+right:10px;
+top:35px;
+background-color: #0067a4;
+color: white;
+align: middle;
+border: none;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;}
 table {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -30,9 +43,9 @@ table th {
   background-color: #4CAF50;
   color: white;
 }
-</style>
+</style><h1>Employee Details</h1>
 </head>
-<body>
+<body><br>
 <table>
 <tr>
 <th>Employee Id</th>
@@ -54,5 +67,8 @@ table th {
 
 
 </table>
+<form action="LogoutController" method="get">
+<input type="submit" value="Logout">
+</form>
 </body>
 </html>

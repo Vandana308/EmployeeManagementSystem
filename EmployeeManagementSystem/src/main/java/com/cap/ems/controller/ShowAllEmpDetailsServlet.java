@@ -28,7 +28,7 @@ public class ShowAllEmpDetailsServlet extends HttpServlet {
 		try {
 			List<Employee> empList=es.getAllEmployee();
 			request.setAttribute("empDetailsList", empList);
-			RequestDispatcher rd=request.getRequestDispatcher("ShowAllEmpDetails.jsp");
+			RequestDispatcher rd=request.getRequestDispatcher("/ShowAllEmpDetails.jsp");
 			rd.forward(request, response);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -4,6 +4,18 @@
 <html>
 <head>
 <style>
+input[value=Logout]{
+position:fixed;
+right:10px;
+top:5px;
+background-color: #0067a4;
+color: white;
+align: middle;
+border: none;
+padding: 16px 32px;
+text-decoration: none;
+margin: 4px 2px;
+cursor: pointer;}
 form{
       color: #0067a4;
       align: center;
@@ -126,7 +138,8 @@ Address       <input type="text" name="Emp_Home_Address"><br>
 <br>
 Contact Number<input type="text" name="Emp_Contact_Num"><br>
 <br>
-Manager key ID<input type="text" name="Mgr_Id"><br>
+Manager key ID<input type="text" name="Mgr_Id"><br><br>
+User Type: <input type="text" name="UserType">
 
 
  <br>
@@ -138,4 +151,7 @@ Manager key ID<input type="text" name="Mgr_Id"><br>
  </form>
 </div>
 </body>
+<form action="LogoutController" method="get">
+<input type="submit" value="Logout">
+</form>
 </html>

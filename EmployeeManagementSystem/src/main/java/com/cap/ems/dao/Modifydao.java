@@ -14,8 +14,9 @@ public class Modifydao{
 	Connection  con;
 	PreparedStatement ps;
 	ResultSet rs;
-	public Modifydao() throws SQLException  {
-		con=DriverManager.getConnection("jdbc:mysql://localhost/miniprojectems","root","India@12345");
+	public Modifydao() throws SQLException, ClassNotFoundException  {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/miniprojectems","root","India@12345");
 	}
 	
 	public boolean Modifydao() throws SQLException{
@@ -34,7 +35,7 @@ public class Modifydao{
 		ps.setString(5,emp.getEmp_Marital_Status());
 		ps.setString(6, emp.getEmp_Home_Address());
 		ps.setString(7, emp.getEmp_Contact_Num());
-		ps.setInt(8, emp.getMgr_Id());
+		ps.setString(8, emp.getMgrId());
 		int n=ps.executeUpdate();
 		if(n>0) {
 			return true;

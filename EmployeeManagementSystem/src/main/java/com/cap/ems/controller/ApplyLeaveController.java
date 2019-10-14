@@ -15,8 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.joda.time.DateTime;
-import org.joda.time.Days;
+
 
 import com.cap.ems.model.Leave;
 import com.cap.ems.service.LeaveService;
@@ -37,37 +36,27 @@ public class ApplyLeaveController extends HttpServlet {
    		String date_from = request.getParameter("date_from");
    	
 		String date_to=request.getParameter("date_to");
-		format = new SimpleDateFormat("yyyy/MM/dd");
-		Date d1= null;
-		Date d2= null;
-		int emp_Id= Integer.parseInt(request.getParameter("emp_Id"));
+		
+		String emp_Id= request.getParameter("emp_Id");
 		String status="applied";
-		long leave_balance;
-    	long noofdays_applied;
-		try {
-			d1= format.parse(date_from);
-			d2= format.parse(date_to);
-		long diff= d2.getTime() - d1.getTime();
-		noofdays_applied = diff/(24*60*60*1000);
-		leave_balance= 12 - noofdays_applied;
-       Leave lv= new Leave(emp_Id, leave_balance, noofdays_applied, status, date_from, date_to);
+		Leave lv= new Leave(emp_Id, status, date_from, date_to);
 		ls= new LeaveService();
 		
-				if(ls.saveLeaves(lv)){
-					
-					System.out.println("leaves added"+noofdays_applied);
-					//response.sendRedirect("viewLeaves.jsp");
+				try {
+					if(ls.saveLeaves(lv)){
+						response.sendRedirect("EmployeeAppliesLeave.jsp");
+							}
+						else {
+						response.sendRedirect("LeaveNotApplied.jsp");
 						}
-					else {
-					//response.sendRedirect("leaveFail.jsp");
-					System.out.println("Else caluse");
-					}
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+				} catch (Exception e) {
+					response.sendRedirect("LeaveNotApplied.jsp");
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} 
    	}
-}
+
 				
    	
 	
