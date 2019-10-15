@@ -17,7 +17,7 @@ public class LeaveDao {
 	ResultSet rs;
 	public LeaveDao() throws SQLException, ClassNotFoundException  {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/miniprojectems","root","India@12345");
+		con=DriverManager.getConnection("jdbc:mysql://192.168.12.125:3306/miniprojectems","rajul","qwer1234");
 	}
 	public boolean saveLeaves(Leave lv) throws SQLException {
 		
@@ -37,7 +37,7 @@ public class LeaveDao {
 	}
 		
 	public List<Leave> getLeaves() throws Exception {	
-		ps=con.prepareStatement("select * from leave_history");
+		ps=con.prepareStatement("select * from leave_history where status = 'applied'");
 		rs=ps.executeQuery();
 		List<Leave> leaveList=new ArrayList<>();
 		while(rs.next()) {

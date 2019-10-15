@@ -14,7 +14,7 @@ public class UserDao {
 	ResultSet rs;
 	public UserDao() throws SQLException, ClassNotFoundException  {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/miniprojectems","root","India@12345");
+		con=DriverManager.getConnection("jdbc:mysql://192.168.12.125:3306/miniprojectems","rajul","qwer1234");
 	}
 public boolean saveUsers(UserMaster user)throws Exception {
 		

@@ -32,6 +32,8 @@ public class LeaveController extends HttpServlet {
 			rd.forward(request, response);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			RequestDispatcher rd=request.getRequestDispatcher("NoLeaves.jsp");
+			rd.forward(request, response);
 			e.printStackTrace();
 		}
 	

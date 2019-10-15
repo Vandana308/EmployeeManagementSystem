@@ -76,20 +76,20 @@ tr:nth-child(even) {
 
 			for (Employee emp : empList) {
 
-				out.print("<tr><td>" + emp.getEmp_ID() + "</td>");
-				out.print("<td>" + emp.getEmp_First_Name() + "</td>");
-				out.print("<td>" + emp.getEmp_Last_Name() + "</td>");
-				out.print("<td>" + emp.getEmp_Date_of_Birth() + "</td>");
-				out.print("<td>" + emp.getEmp_Date_of_Joining() + "</td>");
-				out.print("<td>" + emp.getEmp_Dept_ID() + "</td>");
-				out.print("<td>" + emp.getEmp_Grade() + "</td>");
-				out.print("<td>" + emp.getEmp_Designation() + "</td>");
-				out.print("<td>" + emp.getEmp_Basic() + "</td>");
-				out.print("<td>" + emp.getEmp_Gender() + "</td>");
-				out.print("<td>" + emp.getEmp_Marital_Status() + "</td>");
-				out.print("<td>" + emp.getEmp_Home_Address() + "</td>");
-				out.print("<td>" + emp.getEmp_Contact_Num() + "</td>");
-				out.print("<td>" + emp.getMgrId() + "</td></tr>");
+				out.print("<tr><td>" + emp.getEmpID() + "</td>");
+				out.print("<td>" + emp.getEmpFirstName() + "</td>");
+				out.print("<td>" + emp.getEmpLastName() + "</td>");
+				out.print("<td>" + emp.getEmpDateofBirth() + "</td>");
+				out.print("<td>" + emp.getEmpDateofJoining() + "</td>");
+				out.print("<td>" + emp.getEmpDeptID() + "</td>");
+				out.print("<td>" + emp.getEmpGrade() + "</td>");
+				out.print("<td>" + emp.getEmpDesignation() + "</td>");
+				out.print("<td>" + emp.getEmpBasic() + "</td>");
+				out.print("<td>" + emp.getEmpGender() + "</td>");
+				out.print("<td>" + emp.getEmpMaritalStatus() + "</td>");
+				out.print("<td>" + emp.getEmpHomeAddress() + "</td>");
+				out.print("<td>" + emp.getEmpContactNum() + "</td>");
+				out.print("<td>" + emp.getMgrID() + "</td></tr>");
 
 			}
 		%>

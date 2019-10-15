@@ -37,7 +37,6 @@ body{
 </style>
  <head>
         <title>Employee Management System</title>
-        <link rel="stylesheet" href="file2.css">
     </head>
     <body>
             

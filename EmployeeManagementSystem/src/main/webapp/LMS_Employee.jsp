@@ -155,7 +155,9 @@ h1 {
 					<nav>
 						<ul>
 							<br> 
-							Employee Id: <input  name="emp_Id" required><br>
+							<%String userid = session.getAttribute("userId").toString(); %>
+							Employee Id:
+							<input  name="emp_Id" value="<%=userid%>" readonly><br>
 					
 							<br>
 							<br> 

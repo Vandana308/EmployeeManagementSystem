@@ -1,126 +1,179 @@
 package com.cap.ems.model;
 
 public class Employee {
-	private int  Emp_Basic, Emp_Dept_ID;
-	private String mgrId,Emp_ID,Emp_First_Name, Emp_Last_Name, Emp_Grade, Emp_Designation,  Emp_Gender,  Emp_Marital_Status,  Emp_Home_Address, Emp_Date_of_Birth, Emp_Date_of_Joining, Emp_Contact_Num;
+	private int  empBasic, empDeptID;
+	private String mgrID, empID, empFirstName, empLastName, empGrade, empDesignation, empGender,  empMaritalStatus;
+	private String empHomeAddress, empDateofBirth, empDateofJoining, empContactNum;
+
 	public Employee(String emp_ID, int emp_Basic, String emp_Contact_Num, String mgr_Id, int emp_Dept_ID, String emp_First_Name,
 			String emp_Last_Name, String emp_Grade, String emp_Designation, String emp_Gender, String emp_Marital_Status,
 			String emp_Home_Address, String emp_Date_of_Birth, String emp_Date_of_Joining) {
 	            	
-		this.Emp_ID = emp_ID;
-		this.Emp_Basic = emp_Basic;
-		this.Emp_Contact_Num = emp_Contact_Num;
-		this.mgrId = mgr_Id;
-		this.Emp_Dept_ID = emp_Dept_ID;
-		this.Emp_First_Name = emp_First_Name;
-		this.Emp_Last_Name = emp_Last_Name;
-		this.Emp_Grade = emp_Grade;
-		this.Emp_Designation = emp_Designation;
-		this.Emp_Gender = emp_Gender;
-		this.Emp_Marital_Status = emp_Marital_Status;
-		this.Emp_Home_Address = emp_Home_Address;
-		this.Emp_Date_of_Birth = emp_Date_of_Birth;
-		this.Emp_Date_of_Joining = emp_Date_of_Joining;
-	}
-	public String getEmp_ID() {
-		return Emp_ID;
-	}
-	public void setEmp_ID(String emp_ID) {
-		Emp_ID = emp_ID;
-	}
-	public int getEmp_Basic() {
-		return Emp_Basic;
-	}
-	public void setEmp_Basic(int emp_Basic) {
-		Emp_Basic = emp_Basic;
-	}
-	public String getEmp_Contact_Num() {
-		return Emp_Contact_Num;
-	}
-	public void setEmp_Contact_Num(String emp_Contact_Num) {
-		Emp_Contact_Num = emp_Contact_Num;
+		this.empID = emp_ID;
+		this.empBasic = emp_Basic;
+		this.empContactNum = emp_Contact_Num;
+		this.mgrID = mgr_Id;
+		this.empDeptID = emp_Dept_ID;
+		this.empFirstName = emp_First_Name;
+		this.empLastName = emp_Last_Name;
+		this.empGrade = emp_Grade;
+		this.empDesignation = emp_Designation;
+		this.empGender = emp_Gender;
+		this.empMaritalStatus = emp_Marital_Status;
+		this.empHomeAddress = emp_Home_Address;
+		this.empDateofBirth = emp_Date_of_Birth;
+		this.empDateofJoining = emp_Date_of_Joining;
 	}
 	
-	public String getMgrId() {
-		return mgrId;
+	public int getEmpBasic() {
+		return empBasic;
 	}
-	public void setMgrId(String mgrId) {
-		this.mgrId = mgrId;
+
+
+	public void setEmpBasic(int empBasic) {
+		this.empBasic = empBasic;
 	}
-	public int getEmp_Dept_ID() {
-		return Emp_Dept_ID;
+
+
+	public int getEmpDeptID() {
+		return empDeptID;
 	}
-	public void setEmp_Dept_ID(int emp_Dept_ID) {
-		Emp_Dept_ID = emp_Dept_ID;
+
+
+	public void setEmpDeptID(int empDeptID) {
+		this.empDeptID = empDeptID;
 	}
-	public String getEmp_First_Name() {
-		return Emp_First_Name;
+
+
+	public String getMgrID() {
+		return mgrID;
 	}
-	public void setEmp_First_Name(String emp_First_Name) {
-		Emp_First_Name = emp_First_Name;
+
+
+	public void setMgrID(String mgrID) {
+		this.mgrID = mgrID;
 	}
-	public String getEmp_Last_Name() {
-		return Emp_Last_Name;
+
+
+	public String getEmpID() {
+		return empID;
 	}
-	public void setEmp_Last_Name(String emp_Last_Name) {
-		Emp_Last_Name = emp_Last_Name;
+
+
+	public void setEmpID(String empID) {
+		this.empID = empID;
 	}
-	public String getEmp_Grade() {
-		return Emp_Grade;
+
+
+	public String getEmpFirstName() {
+		return empFirstName;
 	}
-	public void setEmp_Grade(String emp_Grade) {
-		Emp_Grade = emp_Grade;
+
+
+	public void setEmpFirstName(String empFirstName) {
+		this.empFirstName = empFirstName;
 	}
-	public String getEmp_Designation() {
-		return Emp_Designation;
+
+
+	public String getEmpLastName() {
+		return empLastName;
 	}
-	public void setEmp_Designation(String emp_Designation) {
-		Emp_Designation = emp_Designation;
+
+
+	public void setEmpLastName(String empLastName) {
+		this.empLastName = empLastName;
 	}
-	public String getEmp_Gender() {
-		return Emp_Gender;
+
+
+	public String getEmpGrade() {
+		return empGrade;
 	}
-	public void setEmp_Gender(String emp_Gender) {
-		Emp_Gender = emp_Gender;
+
+
+	public void setEmpGrade(String empGrade) {
+		this.empGrade = empGrade;
 	}
-	public String getEmp_Marital_Status() {
-		return Emp_Marital_Status;
+
+
+	public String getEmpDesignation() {
+		return empDesignation;
 	}
-	public void setEmp_Marital_Status(String emp_Marital_Status) {
-		Emp_Marital_Status = emp_Marital_Status;
+
+
+	public void setEmpDesignation(String empDesignation) {
+		this.empDesignation = empDesignation;
 	}
-	public String getEmp_Home_Address() {
-		return Emp_Home_Address;
+
+
+	public String getEmpGender() {
+		return empGender;
 	}
-	public void setEmp_Home_Address(String emp_Home_Address) {
-		Emp_Home_Address = emp_Home_Address;
+
+
+	public void setEmpGender(String empGender) {
+		this.empGender = empGender;
 	}
-	public String getEmp_Date_of_Birth() {
-		return Emp_Date_of_Birth;
+
+
+	public String getEmpMaritalStatus() {
+		return empMaritalStatus;
 	}
-	public void setEmp_Date_of_Birth(String emp_Date_of_Birth) {
-		Emp_Date_of_Birth = emp_Date_of_Birth;
+
+
+	public void setEmpMaritalStatus(String empMaritalStatus) {
+		this.empMaritalStatus = empMaritalStatus;
 	}
-	public String getEmp_Date_of_Joining() {
-		return Emp_Date_of_Joining;
+
+
+	public String getEmpHomeAddress() {
+		return empHomeAddress;
 	}
-	public void setEmp_Date_of_Joining(String emp_Date_of_Joining) {
-		Emp_Date_of_Joining = emp_Date_of_Joining;
+
+
+	public void setEmpHomeAddress(String empHomeAddress) {
+		this.empHomeAddress = empHomeAddress;
 	}
-	
+
+
+	public String getEmpDateofBirth() {
+		return empDateofBirth;
+	}
+
+
+	public void setEmpDateofBirth(String empDateofBirth) {
+		this.empDateofBirth = empDateofBirth;
+	}
+
+
+	public String getEmpDateofJoining() {
+		return empDateofJoining;
+	}
+
+
+	public void setEmpDateofJoining(String empDateofJoining) {
+		this.empDateofJoining = empDateofJoining;
+	}
+
+
+	public String getEmpContactNum() {
+		return empContactNum;
+	}
+
+
+	public void setEmpContactNum(String empContactNum) {
+		this.empContactNum = empContactNum;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Employee [Emp_ID=" + Emp_ID + ", Emp_Basic=" + Emp_Basic + ", Emp_Contact_Num=" + Emp_Contact_Num
-				+ ", Mgr_Id=" + mgrId + ", Emp_Dept_ID=" + Emp_Dept_ID + ", Emp_First_Name=" + Emp_First_Name
-				+ ", Emp_Last_Name=" + Emp_Last_Name + ", Emp_Grade=" + Emp_Grade + ", Emp_Designation=" + Emp_Designation
-				+ ", Emp_Gender=" + Emp_Gender + ", Emp_Marital_Status=" + Emp_Marital_Status + ", Emp_Home_Address="
-				+ Emp_Home_Address + ", Emp_Date_of_Birth=" + Emp_Date_of_Birth + ", Emp_Date_of_Joining="
-				+ Emp_Date_of_Joining + "]";
+		return "Employee [Emp_ID=" + empID + ", Emp_Basic=" + empBasic + ", Emp_Contact_Num=" + empContactNum
+				+ ", Mgr_Id=" + mgrID + ", Emp_Dept_ID=" + empDeptID + ", Emp_First_Name=" + empFirstName
+				+ ", Emp_Last_Name=" + empLastName + ", Emp_Grade=" + empGrade + ", Emp_Designation=" +empDesignation
+				+ ", Emp_Gender=" + empGender + ", Emp_Marital_Status=" + empMaritalStatus + ", Emp_Home_Address="
+				+ empHomeAddress + ", Emp_Date_of_Birth=" + empDateofBirth + ", Emp_Date_of_Joining="
+				+ empDateofJoining + "]";
 	}
 	public Employee() {
-		}
-
-
-
-
+	}
 }

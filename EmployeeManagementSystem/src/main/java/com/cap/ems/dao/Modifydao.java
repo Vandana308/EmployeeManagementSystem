@@ -16,7 +16,7 @@ public class Modifydao{
 	ResultSet rs;
 	public Modifydao() throws SQLException, ClassNotFoundException  {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/miniprojectems","root","India@12345");
+		con=DriverManager.getConnection("jdbc:mysql://192.168.12.125:3306/miniprojectems","rajul","qwer1234");
 	}
 	
 	public boolean Modifydao() throws SQLException{
@@ -28,14 +28,14 @@ public class Modifydao{
 		PreparedStatement ps = con.prepareStatement(query);
 		
 		//ps.setInt(1, emp.getEmp_ID());
-		ps.setInt(1, emp.getEmp_Dept_ID());
-		ps.setString(2, emp.getEmp_Grade());
-		ps.setString(3,emp.getEmp_Designation());
-		ps.setInt(4,emp.getEmp_Basic());
-		ps.setString(5,emp.getEmp_Marital_Status());
-		ps.setString(6, emp.getEmp_Home_Address());
-		ps.setString(7, emp.getEmp_Contact_Num());
-		ps.setString(8, emp.getMgrId());
+		ps.setInt(1, emp.getEmpDeptID());
+		ps.setString(2, emp.getEmpGrade());
+		ps.setString(3,emp.getEmpDesignation());
+		ps.setInt(4,emp.getEmpBasic());
+		ps.setString(5,emp.getEmpMaritalStatus());
+		ps.setString(6, emp.getEmpHomeAddress());
+		ps.setString(7, emp.getEmpContactNum());
+		ps.setString(8, emp.getMgrID());
 		int n=ps.executeUpdate();
 		if(n>0) {
 			return true;

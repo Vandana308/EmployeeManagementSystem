@@ -87,12 +87,12 @@ fieldset {
 		<form action="modifyEmployee" method="post">
 
 			<br>Employee ID <input type="text" name="Emp_ID"
-				value="<%=e.getEmp_ID()%>"><br> <br>Department ID<input
-				type="text" name="Emp_Dept_ID" value="<%=e.getEmp_Dept_ID()%>"><br>
+				value="<%=e.getEmpID()%>"><br> <br>Department ID<input
+				type="text" name="Emp_Dept_ID" value="<%=e.getEmpDeptID()%>"><br>
 			<br>Grade
 			<fieldset>
 				<p>
-					<label>Select Grade</label> <select id="myList1" name="Emp_Grade" value="<%=e.getEmp_Grade()%>">
+					<label>Select Grade</label> <select id="myList1" name="Emp_Grade" value="<%=e.getEmpGrade()%>">
 						<option value="M1">M1</option>
 						<option value="M2">M2</option>
 						<option value="M3">M3</option>
@@ -104,19 +104,19 @@ fieldset {
 				</p>
 			</fieldset>
 			<br>Designation <input type="text" name="Emp_Designation"
-				value="<%=e.getEmp_Designation()%>"><br> <br>Income
-			<input type="text" name="Emp_Basic" value="<%=e.getEmp_Basic()%>"><br>
+				value="<%=e.getEmpDesignation()%>"><br> <br>Income
+			<input type="text" name="Emp_Basic" value="<%=e.getEmpBasic()%>"><br>
 			<br>Marital Status: <br>
-			<br> <select id="myList3" name="Emp_Marital_Status" value="<%=e.getEmp_Marital_Status()%>">
+			<br> <select id="myList3" name="Emp_Marital_Status" value="<%=e.getEmpMaritalStatus()%>">
 				<option value="Single">Single</option>
 				<option value="Married">Married</option>
 				<option value="Divorced">Divorced</option>
 				<option value="Unmarried">Unmarried</option>
 				<option value="Widowed">Widowed</option>
 			</select>
-			<br> <br> Address <input type="text" name="Emp_Home_Address" value="<%=e.getEmp_Home_Address()%>"><br>
-			<br> Contact Number<input type="text" name="Emp_Contact_Num" value="<%=e.getEmp_Contact_Num()%>"><br> 
-			<br> Manager key ID<input type="text" name="Mgr_Id" value="<%=e.getMgrId()%>"><br> <br> <br> <br>
+			<br> <br> Address <input type="text" name="Emp_Home_Address" value="<%=e.getEmpHomeAddress()%>"><br>
+			<br> Contact Number<input type="text" name="Emp_Contact_Num" value="<%=e.getEmpContactNum()%>"><br> 
+			<br> Manager key ID<input type="text" name="Mgr_Id" value="<%=e.getMgrID()%>"><br> <br> <br> <br>
 			<input type="submit" value="Modify"> <br>
 
 		</form>

@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Search Form</title>
-<link rel="stylesheet" href="bb.css">
+
 </head>
 <body>
 	<style>
@@ -24,24 +24,16 @@ cursor: pointer;}
 h1 {
 	background-color: #666;
 	padding: 30px;
-	background: rgba(0, 0, 0, 0.5);
-	text-align: center;
 	font-size: 35px;
 	color: white;
-}
-
-nav {
-	float: left;
+	margin-bottom: 50px;
+	margin-top: 10px;
+	font-size: 45px;
 	background: rgba(0, 0, 0, 0.5);
-	width: 30%;
-	height: 450px; /* only for demonstration, should be removed */
-	padding: 20px;
-}
-
-/* Style the list inside the menu */
-nav ul {
-	list-style-type: none;
-	padding: 0;
+	font-family: "Courier New", Courier, Monospace;
+	color:;
+	letter-spacing: 1px;
+	text-align: centre;
 }
 
 body {
@@ -83,17 +75,6 @@ body {
 	font-family: sans-serif;
 }
 
-h1 {
-	margin-bottom: 50px;
-	margin-top: 10px;
-	font-size: 45px;
-	background: rgba(0, 0, 0, 0.5);
-	font-family: "Courier New", Courier, Monospace;
-	color:;
-	letter-spacing: 1px;
-	text-align: centre;
-}
-
 .search-field {
 	height: 30px;
 	padding: 10px;
@@ -125,8 +106,9 @@ h1 {
 .form-box {
 	background: rgba(0, 0, 0, 0.5);
 	padding: 30px;
-	margin-left: 390px;
+	margin-left: 90px;
 	height: 430px;
+	widht: 200px;
 }
 
 .modify-btn {
@@ -158,14 +140,6 @@ h1 {
 			</div>
 			<div>
 				<section>
-					<nav>
-						<ul>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-						</ul>
-					</nav>
-
 
 				</section>
 			</div>

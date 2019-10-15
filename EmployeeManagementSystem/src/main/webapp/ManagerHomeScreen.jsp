@@ -22,6 +22,19 @@ input[value=Logout] {
 	cursor: pointer;
 }
 
+input[value=ForManagers] {
+	position: fixed;
+	right: 10px;
+	top: 175px;
+	background-color: #0067a4;
+	color: white;
+	align: middle;
+	border: none;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+}
 
 input[value=LeaveManagementSystem] {
 	position: fixed;
@@ -109,15 +122,11 @@ th {
 
 	<%
 		response.setHeader("Pragma", "no-cache");
-		Employee empDetail = (Employee) session.getAttribute("EmployeeObj");
+		Employee empDetail = (Employee) session.getAttribute("ManagerObj");
 
-		if (session.getAttribute("UserNameObj") == null) {
-			response.sendRedirect("LoginScreen.jsp");
-
-		}
 	%>
 	<header>
-		<strong> Welcome <%=empDetail.getEmpFirstName()%>
+		<strong> Welcome to Manager : <%=empDetail.getEmpFirstName()%>
 		</strong>
 	</header>
 	<table style="width: 10%" align="left">
@@ -180,14 +189,12 @@ th {
 
 			</a> <br>
 		</div>
-		<% String userid = empDetail.getEmpID(); %>
 		<form action="LMS_Employee.jsp" method="get">
-		<%
-   			 session.setAttribute("userId", userid);
-        %>
 			<input type="submit" value="LeaveManagementSystem">
 		</form>
-		
+		<form action="LeaveController" method="get">
+			<input type="submit" value="ForManagers" placeholder="For Managers">
+		</form>
 		<form action="LogoutController" method="get">
 			<input type="submit" value="Logout">
 		</form>

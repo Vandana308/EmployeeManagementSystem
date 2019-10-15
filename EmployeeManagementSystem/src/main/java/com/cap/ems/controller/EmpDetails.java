@@ -27,9 +27,9 @@ public class EmpDetails extends HttpServlet {
 		try {Class.forName("com.mysql.jdbc.Driver");
 			  BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 			    String Emp_ID=request.getParameter("Emp_ID");				
-				String url = "jdbc:mysql://localhost:3306/miniprojectems";
-				String uname = "root";
-				String password = "India@12345";
+				String url = "jdbc:mysql://192.168.12.125:3306/miniprojectems";
+				String uname = "rajul";
+				String password = "qwer1234";
 				
 			    String query = "select * from employee where Emp_ID='"+Emp_ID+"'";
 			    

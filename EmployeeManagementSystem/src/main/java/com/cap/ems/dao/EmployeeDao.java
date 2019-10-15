@@ -19,26 +19,26 @@ public class EmployeeDao {
 	ResultSet rs;
 	public EmployeeDao() throws SQLException, ClassNotFoundException  {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/miniprojectems","root","India@12345");
+		con=DriverManager.getConnection("jdbc:mysql://192.168.12.125:3306/miniprojectems","rajul","qwer1234");
 	}
 public boolean saveEmployee(Employee emp)throws Exception {
 		
 		
 		ps=con.prepareStatement("insert into Employee values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-		ps.setString(1, emp.getEmp_ID());
-		ps.setString(2, emp.getEmp_First_Name());
-		ps.setString(3, emp.getEmp_Last_Name());
-		ps.setString(4, emp.getEmp_Date_of_Birth());
-		ps.setString(5, emp.getEmp_Date_of_Joining());
-		ps.setInt(6, emp.getEmp_Dept_ID());
-		ps.setString(7, emp.getEmp_Grade());
-		ps.setString(8, emp.getEmp_Designation());
-		ps.setInt(9, emp.getEmp_Basic());
-		ps.setString(10, emp.getEmp_Gender());
-		ps.setString(11, emp.getEmp_Marital_Status());
-		ps.setString(12, emp.getEmp_Home_Address());
-		ps.setString(13, emp.getEmp_Contact_Num());
-		ps.setString(14, emp.getMgrId());
+		ps.setString(1, emp.getEmpID());
+		ps.setString(2, emp.getEmpFirstName());
+		ps.setString(3, emp.getEmpLastName());
+		ps.setString(4, emp.getEmpDateofBirth());
+		ps.setString(5, emp.getEmpDateofJoining());
+		ps.setInt(6, emp.getEmpDeptID());
+		ps.setString(7, emp.getEmpGrade());
+		ps.setString(8, emp.getEmpDesignation());
+		ps.setInt(9, emp.getEmpBasic());
+		ps.setString(10, emp.getEmpGender());
+		ps.setString(11, emp.getEmpMaritalStatus());
+		ps.setString(12, emp.getEmpHomeAddress());
+		ps.setString(13, emp.getEmpContactNum());
+		ps.setString(14, emp.getMgrID());
 		int n=ps.executeUpdate();
 		if(n>0) {
 			return true;
@@ -52,20 +52,20 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		rs=ps.executeQuery();
 		Employee emp=new Employee();
 		if(rs.next()) {
-		emp.setEmp_ID(rs.getString(1));
-		emp.setEmp_First_Name(rs.getString(2));
-		emp.setEmp_Last_Name(rs.getString(3));
-		emp.setEmp_Date_of_Birth(rs.getString(4));
-		emp.setEmp_Date_of_Joining(rs.getString(5));
-		emp.setEmp_Dept_ID(rs.getInt(6));
-		emp.setEmp_Grade(rs.getString(7));
-		emp.setEmp_Designation(rs.getString(8));
-		emp.setEmp_Basic(rs.getInt(9));
-		emp.setEmp_Gender(rs.getString(10));
-		emp.setEmp_Marital_Status(rs.getString(11));
-		emp.setEmp_Home_Address(rs.getString(12));
-		emp.setEmp_Contact_Num(rs.getString(13));
-		emp.setMgrId(rs.getString(14));
+		emp.setEmpID(rs.getString(1));
+		emp.setEmpFirstName(rs.getString(2));
+		emp.setEmpLastName(rs.getString(3));
+		emp.setEmpDateofBirth(rs.getString(4));
+		emp.setEmpDateofJoining(rs.getString(5));
+		emp.setEmpDeptID(rs.getInt(6));
+		emp.setEmpGrade(rs.getString(7));
+		emp.setEmpDesignation(rs.getString(8));
+		emp.setEmpBasic(rs.getInt(9));
+		emp.setEmpGender(rs.getString(10));
+		emp.setEmpMaritalStatus(rs.getString(11));
+		emp.setEmpHomeAddress(rs.getString(12));
+		emp.setEmpContactNum(rs.getString(13));
+		emp.setMgrID(rs.getString(14));
 		return emp;
 		}
 		return null;	
@@ -77,20 +77,20 @@ public boolean saveEmployee(Employee emp)throws Exception {
 		List<Employee> empList=new ArrayList<>();
 		while(rs.next()) {
 		Employee emp=new Employee();
-		emp.setEmp_ID(rs.getString(1));
-		emp.setEmp_First_Name(rs.getString(2));
-		emp.setEmp_Last_Name(rs.getString(3));
-		emp.setEmp_Date_of_Birth(rs.getString(4));
-		emp.setEmp_Date_of_Joining(rs.getString(5));
-		emp.setEmp_Dept_ID(rs.getInt(6));
-		emp.setEmp_Grade(rs.getString(7));
-		emp.setEmp_Designation(rs.getString(8));
-		emp.setEmp_Basic(rs.getInt(9));
-		emp.setEmp_Gender(rs.getString(10));
-		emp.setEmp_Marital_Status(rs.getString(11));
-		emp.setEmp_Home_Address(rs.getString(12));
-		emp.setEmp_Contact_Num(rs.getString(13));
-		emp.setMgrId(rs.getString(14));
+		emp.setEmpID(rs.getString(1));
+		emp.setEmpFirstName(rs.getString(2));
+		emp.setEmpLastName(rs.getString(3));
+		emp.setEmpDateofBirth(rs.getString(4));
+		emp.setEmpDateofJoining(rs.getString(5));
+		emp.setEmpDeptID(rs.getInt(6));
+		emp.setEmpGrade(rs.getString(7));
+		emp.setEmpDesignation(rs.getString(8));
+		emp.setEmpBasic(rs.getInt(9));
+		emp.setEmpGender(rs.getString(10));
+		emp.setEmpMaritalStatus(rs.getString(11));
+		emp.setEmpHomeAddress(rs.getString(12));
+		emp.setEmpContactNum(rs.getString(13));
+		emp.setMgrID(rs.getString(14));
 		empList.add(emp);
 		}
 		return empList;

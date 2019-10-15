@@ -37,23 +37,33 @@ public class LoginServlet extends HttpServlet {
 		
 
 			if (dao.check(username, userpassword)) {
-
 				
-				if (username .equals("admin") && userpassword .equals("admin")) {
+				String userType = dao.userType;
+				if (userType .equals("admin")) {
 					RequestDispatcher rd = request.getRequestDispatcher("/AdminOptionScreen.jsp");
 					rd.forward(request, response);
 					
-				} else {
+				} else if(userType .equals("employee"))
+				{
 					HttpSession session = request.getSession();
 					session.setAttribute("UserNameObj", username);
 					Employee emp = dao.getEmpDetailById(username);
 					session.setAttribute("EmployeeObj", emp);
-					// response.sendRedirect("Welcome.jsp");
 					RequestDispatcher rd1 = request.getRequestDispatcher("/EMPLOYEE_MAIN_OPTION_SCREEN.jsp");
 					rd1.forward(request, response);
 				}
+				else {
+					HttpSession session = request.getSession();
+					session.setAttribute("UserNameObj", username);
+					Employee emp = dao.getEmpDetailById(username);
+					session.setAttribute("ManagerObj", emp);
+					RequestDispatcher rd2 = request.getRequestDispatcher("/ManagerHomeScreen.jsp");
+					rd2.forward(request, response);
+				}
+			
 			} else {
 				response.sendRedirect("LoginScreen.jsp");
+				System.out.println("null");
 				PrintWriter out = response.getWriter();
 				out.println("wrong username or password");
 			}

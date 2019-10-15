@@ -17,7 +17,7 @@ public class ManagerDao {
 	PreparedStatement ps;
 	ResultSet rs;
 	public ManagerDao() throws SQLException  {
-		con=DriverManager.getConnection("jdbc:mysql://localhost/miniprojectems","root","India@12345");
+		con=DriverManager.getConnection("jdbc:mysql://192.168.12.125:3306/miniprojectems","rajul","qwer1234");
 	}
 	public List<Leave> getLeaves(int eID) throws Exception {	
 		ps=con.prepareStatement("select * from leave_history where EMP_Id=? and status=?");
